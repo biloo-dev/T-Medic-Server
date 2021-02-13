@@ -8,7 +8,7 @@ class CategorySchema extends Schema {
     this.create('categories', (table) => {
       table.increments()
       table.string('type', 80).notNullable()
-      table.string('slug', 80).notNullable().unique()
+      table.string('slug', 80).notNullable()
       table.string('name', 254).notNullable()
       table.string('image', 60).nullable()
       table.integer('items').nullable()

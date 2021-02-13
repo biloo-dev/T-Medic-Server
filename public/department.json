@@ -12,25 +12,15 @@
         },
         "columns": [{
           "size": 6,
-          "links": [{
+          "links": [
+            {
               "title": "Soins De Santé",
               "url": "",
-              "children": [{
-                  "title": "Contrôle De La Santé",
-                  "url": ""
-                },
-                {
-                  "title": "Diagnostic",
-                  "url": ""
-                },
-                {
-                  "title": "Massage & Bien-être",
-                  "url": ""
-                },
-                {
-                  "title": "Mesure",
-                  "url": ""
-                }
+              "children": [
+                { "title": "Contrôle De La Santé", "url": "" },
+                { "title": "Diagnostic", "url": "" },
+                { "title": "Massage & Bien-être", "url": "" },
+                {  "title": "Mesure", "url": "" }
               ]
             }
           ]
@@ -148,7 +138,7 @@
     "submenu": {
       "type": "megamenu",
       "menu": {
-        "size": "nl",
+        "size": "sm",
         "image": {
           "ltr": "/images/megamenu/megamenu-5-ltr.jpg",
           "rtl": "/images/megamenu/megamenu-5-rtl.jpg"
