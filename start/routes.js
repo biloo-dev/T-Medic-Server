@@ -25,8 +25,11 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
 
   Route.group(() => {
     Route.post("register", "AuthController.register");
-    Route.post("login", "AuthController.login");
+    Route.post("login", "AuthController.login");  
   }).prefix("api").middleware("guest");
+
+
+
   Route.group(() => { 
     Route.get("/users/profile", "AuthController.show")
     Route.patch("/users/profile", "UserController.updateProfile")
@@ -42,8 +45,20 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
  * Front End API Website 
 */
   Route.group(() => {
-    Route.get("/categorys", "CategoryController.index");
+
+    Route.post("/categorys", "CategoryController.index");
     Route.get("/getConfig", "CategoryController.getConfig");
+    Route.post("/getPopularCategories", "CategoryController.getPopularCategories");
+
+    Route.post("/getProductsList", "ProductController.index"); 
+    Route.post("/getPopularProducts", "ProductController.getPopularProducts");
+    Route.post("/getFeaturedProducts", "ProductController.getFeaturedProducts");
+    Route.post("/getLatestProducts", "ProductController.getLatestProducts");
+    Route.post("/getTopRatedProducts", "ProductController.getTopRatedProducts");
+    Route.post("/getDiscountedProducts", "ProductController.getDiscountedProducts");
+
+
+    Route.get("/getImg/:folder?/:category?/:img?", "ProductController.getImg");
   }).prefix("api")
 
  

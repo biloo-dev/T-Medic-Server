@@ -4,6 +4,10 @@
 const Model = use('Model')
 
 class Category extends Model {
+   static boot() {
+     super.boot()
+     this.addTrait('@provider:Lucid/OptionalQueries')
+   }
   parent(){
     return this.hasOne('App/Models/Category','id','parent_id')
   }

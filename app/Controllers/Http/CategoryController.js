@@ -5,7 +5,18 @@ const Drive = use('Drive');
 class CategoryController {
  
   async index ({ request, response, view }) {
-    let Categorys = await Category.query().with('parent').with('children').fetch() 
+    let { limit , type } = request.input('options') 
+    let Categorys = await Category.query().with('parent').with('children').limit().fetch() 
+    return response.json(Categorys)
+  }
+  async getPopularCategories ({ request, response, view }) {
+    let { limit } = request.input('options') 
+    let Categorys = await Category.query()
+                                  .optional(q => {  
+                                    q.whereNotNull('image') 
+                                  })
+                                  .with('parent').with('children').limit(limit || 12).fetch()
+  
     return response.json(Categorys)
   }
   async getConfig({ request, response, view }){
