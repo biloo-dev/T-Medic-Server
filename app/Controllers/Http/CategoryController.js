@@ -4,13 +4,13 @@ const Helpers = use('Helpers');
 const Drive = use('Drive');
 class CategoryController {
  
-  async index ({ request, response, view }) {
-    let { limit , type } = request.input('options') 
+  async index ({ request, response, view }) { 
     let Categorys = await Category.query().with('parent').with('children').limit().fetch() 
     return response.json(Categorys)
   }
   async getPopularCategories ({ request, response, view }) {
-    let { limit } = request.input('options') 
+    console.log('request.input() :>> ', request.input('options'));
+    let limit  = request.input('options') ? request.input('options').limit : 12 
     let Categorys = await Category.query()
                                   .optional(q => {  
                                     q.whereNotNull('image') 

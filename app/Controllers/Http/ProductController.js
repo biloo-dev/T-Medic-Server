@@ -9,15 +9,17 @@ class ProductController {
   async index ({ request, response, view }) {
       // console.log('options :>> ', request.input('options'));
       // console.log('filters :>> ', request.input('filters'));
-      let page     = request.input('options').page || 1
-      let limit    = request.input('options').limit || 12
-      let sort     = request.input('options').sort && request.input('options').sort != 'name_asc' ? 'DESC' :'ASC'
-      let price    = request.input('filters').price ? request.input('filters').price.split('-') : ['0', '999999999']
-      let brand    = request.input('filters').brand ? request.input('filters').brand.split(',') : []
-      let color    = request.input('filters').color || ''
-      let discount = request.input('filters').discount || ''
-      let category = request.input('filters').category || ''   
-      if (Object.entries(request.input('filters')).length !== 0) {
+      let opt = request.input('options') || {};
+      let fil = request.input('filters') || {}
+      let page     = opt.page || 1
+      let limit    = opt.limit || 12
+      let sort     = opt.sort && request.input('options').sort != 'name_asc' ? 'DESC' :'ASC'
+      let price    = fil.price ? fil.price.split('-') : ['0', '999999999']
+      let brand    = fil.brand ? fil.brand.split(',') : []
+      let color    = fil.color || ''
+      let discount = fil.discount || ''
+      let category = fil.category || ''   
+      if (Object.entries(fil).length !== 0) {
           let Products = await Product.query().optional(query => {
             if (brand.length) {
               query.whereHas('brand', q => q.whereIn('slug', brand))
@@ -55,7 +57,7 @@ class ProductController {
   }
  
   async getPopularProducts ({ request, response }) {
-    let { limit } = request.input('options') 
+    let { limit } = request.input('options') || {}
     let Products = await Product.query()
                                 .with('categories.parent')
                                 .with('categories.children')
@@ -65,7 +67,7 @@ class ProductController {
     return response.json(Products)
   }
   async getDiscountedProducts ({ request, response }) { 
-    let { limit,category } = request.input('options') 
+    let { limit,category } = request.input('options') || {}
     let Products = await  Product.query()
                                 .whereNotNull('compareAtPrice')
                                 .optional( q =>{
@@ -81,7 +83,7 @@ class ProductController {
     return response.json(Products)
   }
   async getTopRatedProducts ({ request, response }) { 
-    let { limit,category } = request.input('options') 
+    let { limit,category } = request.input('options')  || {}
     let Products = await  Product.query()
                                 .optional( q =>{
                                   if (category) {
@@ -95,8 +97,8 @@ class ProductController {
                                 .where('featured', true).limit(limit).fetch()
     return response.json(Products)
   }
-  async getFeaturedProducts ({ request, response }) { 
-    let { limit,category } = request.input('options') 
+  async getFeaturedProducts({  request,  response }) {
+    let { limit,category } = request.input('options') || {}
     let Products = await Product.query()
                                 .optional( q =>{
                                   if (category) {
@@ -111,7 +113,7 @@ class ProductController {
     return response.json(Products)
   }
   async getLatestProducts ({ request, response }) { 
-    let { limit,category } = request.input('options')  
+    let { limit,category } = request.input('options')  || {}
     let Products = await Product.query()
                                 .optional( q =>{
                                   if (category) {
@@ -126,7 +128,7 @@ class ProductController {
     return response.json(Products)
   }
   async getImg ({ request, response ,params }) {
-    let  { folder,category , img } = params 
+    let  { folder,category , img } = params || {}
     let url = Helpers.publicPath(`${folder}/${category}/${img}`)
     if (!img) {
       url = Helpers.publicPath(`${folder}/${category}`)
