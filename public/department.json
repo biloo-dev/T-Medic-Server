@@ -1,6 +1,7 @@
 [ 
   {
     "title": "Soins De Santé",
+    "title_ar": "الرعاية الصحية",
     "url": "",
     "submenu": {
       "type": "megamenu",
@@ -15,12 +16,13 @@
           "links": [
             {
               "title": "Soins De Santé",
+              "title_ar": "الرعاية الصحية",
               "url": "",
               "children": [
-                { "title": "Contrôle De La Santé", "url": "" },
-                { "title": "Diagnostic", "url": "" },
-                { "title": "Massage & Bien-être", "url": "" },
-                {  "title": "Mesure", "url": "" }
+                { "title": "Contrôle De La Santé", "title_ar": "فحص طبي", "url": "" },
+                { "title": "Diagnostic", "title_ar": "التشخيص", "url": "" },
+                { "title": "Massage & Bien-être", "title_ar": "التدليك والرفاهية", "url": "" },
+                {  "title": "Mesure", "title_ar": "القياسات", "url": "" }
               ]
             }
           ]
@@ -30,6 +32,7 @@
   }, 
   {
     "title": "Orthopédie",
+    "title_ar": "طب العظام",
     "url": "",
     "submenu": {
       "type": "megamenu",
@@ -43,21 +46,26 @@
             "size": 6,
             "links": [{
                 "title": "Orthopédie",
+                "title_ar": "طب العظام",
                 "url": "",
                 "children": [{
                     "title": "Béquilles Et Cannes",
+                    "title_ar": " العكازات والعكازات",
                     "url": ""
                   },
                   {
                     "title": "Déambulateurs Et Rollators",
+                    "title_ar": " مشايات وبكرات",
                     "url": ""
                   },
                   {
                     "title": "Fauteuils Et Chaises Garde-robe",
+                    "title_ar": " الكراسي والكراسي خزانة الملابس",
                     "url": ""
                   },
                   {
                     "title": "Fauteuils Roulants",
+                    "title_ar": " الكراسي المتحركة",
                     "url": ""
                   }
                 ]
@@ -70,6 +78,7 @@
   },
   {
     "title": "Oxygénothérapie & Aspiration",
+    "title_ar": "العلاج بالأكسجين والشفط",
     "url": "",
     "submenu": {
       "type": "megamenu",
@@ -83,14 +92,17 @@
           "size": 12,
           "links": [{
               "title": "Oxygénothérapie & Aspiration ",
+              "title_ar": "العلاج بالأكسجين والشفط", 
               "url": "",
               "children": [
                 {
                   "title": "Aspiration",
+                  "title_ar": "تنفس",
                   "url": ""
                 },
                 {
                   "title": "Oxygénothérapie",
+                  "title_ar": "العلاج بالأوكسجين",
                   "url": ""
                 } 
               ]
@@ -102,6 +114,7 @@
   },
   {
     "title": "Consommable",
+    "title_ar": "مستهلك",
     "url": "",
     "submenu": {
       "type": "megamenu",
@@ -114,15 +127,18 @@
         "columns": [{
           "size": 12,
           "links": [{
-              "title": "Consommable",
+          "title_ar": "مستهلك",
+          "title": "Consommable",
               "url": "",
               "children": [
                 {
                   "title": "Consommable Médico-chirurgical",
+                  "title_ar": "مستهلكات طبية جراحية",
                   "url": ""
                 },
                 {
                   "title": "Divers Consommables",
+                  "title_ar": "المواد الاستهلاكية المختلفة",
                   "url": ""
                 } 
               ]
@@ -134,6 +150,7 @@
   },
   {
     "title": "Urgence & Divers",
+    "title_ar": "طوارئ ومتنوعة",
     "url": "",
     "submenu": {
       "type": "megamenu",
@@ -146,15 +163,18 @@
         "columns": [{
           "size": 12,
           "links": [{
-              "title": "Urgence & Divers",
+          "title": "Urgence & Divers",
+          "title_ar": "طوارئ ومتنوعة",
               "url": "",
               "children": [
                 {
                   "title": "Urgence",
+                  "title_ar": "طارئ",
                   "url": ""
                 },
                 {
                   "title": "Divers",
+                  "title_ar": "متنوع",
                   "url": ""
                 } 
               ]
@@ -166,22 +186,27 @@
   }, 
   {
     "title": "Instrumentation",
+    "title_ar": "الأجهزة",
     "url": "/"
   },
   {
     "title": "Mobilier Médical",
+    "title_ar": "أثاث طبي",
     "url": ""
   },
   {
     "title": "Orl & Ophtalmologie",
+    "title_ar": "أورل وطب العيون",
     "url": ""
   },
   {
     "title": "Bloc Opératoire Et Réanimation",
+    "title_ar": "غرفة العمليات والإنعاش",
     "url": ""
   }, 
   {
     "title": "Inox & Plastique",
+    "title_ar": "الفولاذ المقاوم للصدأ والبلاستيك",
     "url": ""
   }
 ]
