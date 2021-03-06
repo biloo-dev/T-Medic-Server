@@ -14,6 +14,9 @@ class Product extends Model {
   attributes() {
     return this.belongsToMany('App/Models/Attribute').withPivot(['values','featured'])
   }
+  tags() {
+    return this.belongsToMany('App/Models/Tag')
+  }
   brand() {
     return this.belongsTo('App/Models/Brand')
   }

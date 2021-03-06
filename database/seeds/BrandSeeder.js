@@ -9,12 +9,10 @@
 | make use of Lucid models directly.
 |
 */
-
-/** @type {import('@adonisjs/lucid/src/Factory')} */
-const Factory = use('Factory')
-
+const Database = use('Database') 
 class BrandSeeder {
   async run () {
+ 
   }
 }
 

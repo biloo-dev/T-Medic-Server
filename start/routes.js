@@ -49,6 +49,9 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
     Route.post("/categorys", "CategoryController.index");
     Route.get("/getConfig", "CategoryController.getConfig");
     Route.post("/getPopularCategories", "CategoryController.getPopularCategories");
+    Route.post("/getCategoryBySlug", "CategoryController.getCategoryBySlug");
+
+    Route.post("/getSettings", "SettingController.getSettings");
 
     Route.post("/getProductsList", "ProductController.index"); 
     Route.post("/getPopularProducts", "ProductController.getPopularProducts");
@@ -56,6 +59,9 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
     Route.post("/getLatestProducts", "ProductController.getLatestProducts");
     Route.post("/getTopRatedProducts", "ProductController.getTopRatedProducts");
     Route.post("/getDiscountedProducts", "ProductController.getDiscountedProducts");
+    Route.post("/getSuggestions", "ProductController.getSuggestions");
+    Route.post("/getProductBySlug", "ProductController.getProductBySlug");
+    Route.post("/getRelatedProducts", "ProductController.getRelatedProducts");
 
 
     Route.get("/getImg/:folder?/:category?/:img?", "ProductController.getImg");

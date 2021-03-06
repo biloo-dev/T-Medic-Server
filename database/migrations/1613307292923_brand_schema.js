@@ -8,7 +8,8 @@ class BrandSchema extends Schema {
     this.create('brands', (table) => {
       table.increments()
       table.string('slug', 250).notNullable()
-      table.string('name', 250).notNullable()
+      table.string('name_fr', 250).notNullable()
+      table.string('name_ar', 250).notNullable()
       table.string('image', 250).notNullable()
       table.timestamps()
     })

@@ -8,14 +8,22 @@ class CategoryController {
     let Categorys = await Category.query().with('parent').with('children').limit().fetch() 
     return response.json(Categorys)
   }
-  async getPopularCategories ({ request, response, view }) {
-    console.log('request.input() :>> ', request.input('options'));
+
+  async getPopularCategories ({ request, response, view }) { 
     let limit  = request.input('options') ? request.input('options').limit : 12 
     let Categorys = await Category.query()
                                   .optional(q => {  
                                     q.whereNotNull('image') 
                                   })
                                   .with('parent').with('children').limit(limit || 12).fetch()
+  
+    return response.json(Categorys)
+  }
+  async getCategoryBySlug ({ request, response, view }) {   
+    let limit  = request.input('options') ? request.input('options').limit : 12 
+    let Categorys = await Category.query()
+                                  .where('slug',request.input('slug')) 
+                                  .with('parent').with('children').first()
   
     return response.json(Categorys)
   }
