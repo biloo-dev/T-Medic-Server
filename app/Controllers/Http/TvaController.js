@@ -5,16 +5,24 @@
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
 /**
- * Resourceful controller for interacting with tags
+ * Resourceful controller for interacting with tvas
  */
-class TagController {
- 
+class TvaController {
+  /**
+   * Show a list of all tvas.
+   * GET tvas
+   *
+   * @param {object} ctx
+   * @param {Request} ctx.request
+   * @param {Response} ctx.response
+   * @param {View} ctx.view
+   */
   async index ({ request, response, view }) {
   }
 
   /**
-   * Render a form to be used for creating a new tag.
-   * GET tags/create
+   * Render a form to be used for creating a new tva.
+   * GET tvas/create
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -25,8 +33,8 @@ class TagController {
   }
 
   /**
-   * Create/save a new tag.
-   * POST tags
+   * Create/save a new tva.
+   * POST tvas
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -36,8 +44,8 @@ class TagController {
   }
 
   /**
-   * Display a single tag.
-   * GET tags/:id
+   * Display a single tva.
+   * GET tvas/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -48,8 +56,8 @@ class TagController {
   }
 
   /**
-   * Render a form to update an existing tag.
-   * GET tags/:id/edit
+   * Render a form to update an existing tva.
+   * GET tvas/:id/edit
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -60,8 +68,8 @@ class TagController {
   }
 
   /**
-   * Update tag details.
-   * PUT or PATCH tags/:id
+   * Update tva details.
+   * PUT or PATCH tvas/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -71,8 +79,8 @@ class TagController {
   }
 
   /**
-   * Delete a tag with id.
-   * DELETE tags/:id
+   * Delete a tva with id.
+   * DELETE tvas/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -82,4 +90,4 @@ class TagController {
   }
 }
 
-module.exports = TagController
+module.exports = TvaController

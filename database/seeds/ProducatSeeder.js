@@ -165,6 +165,7 @@ class ProducatSeeder {
          badges: ['new'],
          rating: 4,
          reviews: 12,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 1,
          note_fr:` Information on technical characteristics, the delivery set, the country of
@@ -217,6 +218,7 @@ class ProducatSeeder {
          badges: ['hot'],
          rating: 5,
          reviews: 3,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 3,
          note_fr:` Information on technical characteristics, the delivery set, the country of
@@ -269,6 +271,7 @@ class ProducatSeeder {
          rating: 4,
          badges: [],
            reviews: 8,
+           tva_id : 3,
          availability: 'in-stock',
          brand_id: 1,
          note_fr:` Information on technical characteristics, the delivery set, the country of
@@ -322,6 +325,7 @@ class ProducatSeeder {
          badges: ['sale'],
          rating: 3,
          reviews: 15,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 1,
          note_fr:` Information on technical characteristics, the delivery set, the country of
@@ -374,6 +378,7 @@ class ProducatSeeder {
          ]),
          rating: 4,
          reviews: 2,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 2,
          note_fr:` Information on technical characteristics, the delivery set, the country of
@@ -427,6 +432,7 @@ class ProducatSeeder {
          badges: [],
          rating: 3,
          reviews: 21,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 2,
          note_fr:` Information on technical characteristics, the delivery set, the country of
@@ -480,6 +486,7 @@ class ProducatSeeder {
          badges: [],
          rating: 2,
          reviews: 1,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 4,
          note_fr:` Information on technical characteristics, the delivery set, the country of
@@ -532,6 +539,7 @@ class ProducatSeeder {
          ]),
          rating: 2,
          reviews: 5,
+         tva_id : 3,
         badges: [],
          availability: 'in-stock',
          brand_id: 5,
@@ -586,6 +594,7 @@ class ProducatSeeder {
          rating: 4,
         badges: [],
          reviews: 34,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 5,
          note_fr:` Information on technical characteristics, the delivery set, the country of
@@ -639,6 +648,7 @@ class ProducatSeeder {
          rating: 5,
          badges: [],
          reviews: 3,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 5,
          categorie_id: 4,
@@ -686,6 +696,7 @@ class ProducatSeeder {
          badges: [],
           rating: 4,
          reviews: 7,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 5,
          categorie_id: 2,
@@ -733,6 +744,7 @@ class ProducatSeeder {
          rating: 5,
          badges: [],
            reviews: 17,
+           tva_id : 3,
          availability: 'in-stock',
          brand_id: 6,
          categorie_id: 3,
@@ -780,6 +792,7 @@ class ProducatSeeder {
          badges: [],
            rating: 2,
          reviews: 8,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 6,
          categorie_id: 1,
@@ -827,6 +840,7 @@ class ProducatSeeder {
          rating: 3,
          badges: [],
            reviews: 14,
+           tva_id : 3,
          availability: 'in-stock',
          brand_id: 1,
          categorie_id: 2,
@@ -874,6 +888,7 @@ class ProducatSeeder {
          rating: 2,
          badges: [],
            reviews: 1,
+           tva_id : 3,
          availability: 'in-stock',
          brand_id: 1,
          categorie_id: 1,
@@ -924,6 +939,7 @@ class ProducatSeeder {
          badges: [],
           rating: 5,
          reviews: 3,
+         tva_id : 3,
          availability: 'in-stock',
          brand_id: 7,
          categorie_id: 3

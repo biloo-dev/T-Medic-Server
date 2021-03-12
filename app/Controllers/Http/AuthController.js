@@ -26,35 +26,50 @@ class AuthController {
     }
   }
   async login({ auth, request, response }) {
-     let {username, password} = request.all();
+    let { email, password} = request.all();
 
         try {
           const rules = {
-            username: "required",
+            email: "required",
             password: "required|min:8"
           };
           const validation = await validateAll(request.all(), rules);
           if (validation.fails()) {
             return response.status(400).send(validation.messages());
           }
-          if (await auth.attempt(username, password)) {
-            let user = await User.findBy('username', username)
-            let token = await auth.generate(user) 
- 
+          if (await auth.attempt(email, password)) {
+            let user = await User.query().where('email', email).select('id','username', 'firstName','lastName','sexe','type','phone1','phone2','img','email').first()
+            let token = await auth.withRefreshToken().generate(user)  
             return response.json({user, ...token })
           } 
         }
         catch (e) {
           console.log(e)
-          return response.json({message: 'You are not registered!'})
+          return response.status(401).send("unauthorized")
         }
   }
   async show({ auth,request, response }) { 
     try {
       const user = await auth.getUser();
+      JSON.stringify
       return response.status(200).send(user);
     } catch (error) {
       return response.status(500).send(error);
+    }
+  }
+  
+  async logout({ auth,request, response }) { 
+    try {
+      await auth.check()
+      const refreshToken = request.input('refreshToken') 
+      console.log('refreshToken :>> ', refreshToken);
+      let ret = await auth.revokeTokens([refreshToken], true) 
+      return ret
+    } catch (err) {
+      console.log(err)
+      response
+        .status(404)
+        .json({ type: 'error', message: err })
     }
   }
   async updateProfile({ auth, request, response }) {

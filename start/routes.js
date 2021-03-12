@@ -26,20 +26,21 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
   Route.group(() => {
     Route.post("register", "AuthController.register");
     Route.post("login", "AuthController.login");  
-  }).prefix("api").middleware("guest");
+  }).prefix("api");
 
 
 
   Route.group(() => { 
     Route.get("/users/profile", "AuthController.show")
+    Route.post("/logout", "AuthController.logout")
     Route.patch("/users/profile", "UserController.updateProfile")
     Route.patch("/users/email", "UserController.updateEmail")
     Route.patch("/users/password", "UserController.updatePassword")
-  }).prefix("api").middleware(['auth'])
+  }).prefix("api").middleware(['auth:jwt'])
 
 
 
-
+  profile
 
 /**
  * Front End API Website 

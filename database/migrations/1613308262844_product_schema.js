@@ -20,6 +20,7 @@ class ProductSchema extends Schema {
       table.integer('compareAtPrice').nullable()
       table.boolean('newArrival').defaultTo(1)
       table.integer('brand_id').nullable().unsigned().references('id').inTable('brands').onDelete('set null')
+      table.integer('tva_id').nullable().unsigned().references('id').inTable('tvas').onDelete('set null') 
       table.json('badges').defaultTo([]) 
       table.integer('categorie_id').nullable().unsigned().references('id').inTable('categories').onDelete('set null')
       table.integer('reviews').nullable()

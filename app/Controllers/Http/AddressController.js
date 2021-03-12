@@ -5,16 +5,24 @@
 /** @typedef {import('@adonisjs/framework/src/View')} View */
 
 /**
- * Resourceful controller for interacting with tags
+ * Resourceful controller for interacting with addresses
  */
-class TagController {
- 
+class AddressController {
+  /**
+   * Show a list of all addresses.
+   * GET addresses
+   *
+   * @param {object} ctx
+   * @param {Request} ctx.request
+   * @param {Response} ctx.response
+   * @param {View} ctx.view
+   */
   async index ({ request, response, view }) {
   }
 
   /**
-   * Render a form to be used for creating a new tag.
-   * GET tags/create
+   * Render a form to be used for creating a new address.
+   * GET addresses/create
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -25,8 +33,8 @@ class TagController {
   }
 
   /**
-   * Create/save a new tag.
-   * POST tags
+   * Create/save a new address.
+   * POST addresses
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -36,8 +44,8 @@ class TagController {
   }
 
   /**
-   * Display a single tag.
-   * GET tags/:id
+   * Display a single address.
+   * GET addresses/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -48,8 +56,8 @@ class TagController {
   }
 
   /**
-   * Render a form to update an existing tag.
-   * GET tags/:id/edit
+   * Render a form to update an existing address.
+   * GET addresses/:id/edit
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -60,8 +68,8 @@ class TagController {
   }
 
   /**
-   * Update tag details.
-   * PUT or PATCH tags/:id
+   * Update address details.
+   * PUT or PATCH addresses/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -71,8 +79,8 @@ class TagController {
   }
 
   /**
-   * Delete a tag with id.
-   * DELETE tags/:id
+   * Delete a address with id.
+   * DELETE addresses/:id
    *
    * @param {object} ctx
    * @param {Request} ctx.request
@@ -82,4 +90,4 @@ class TagController {
   }
 }
 
-module.exports = TagController
+module.exports = AddressController
