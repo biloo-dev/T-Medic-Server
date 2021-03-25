@@ -26,26 +26,44 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
   Route.group(() => {
     Route.post("register", "AuthController.register");
     Route.post("login", "AuthController.login");  
+    Route.post("/refreshToken", "AuthController.refreshToken")
   }).prefix("api");
 
+/**
+ 
+{
+    "type": "bearer",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjMsImlhdCI6MTYxNjM1OTQ3OSwiZXhwIjoxNjE2NDQ1ODc5fQ.PfziZO7c77MLiPcP4psoK1ukzfOIEwozP5ijl6IjQkY",
+    "refreshToken": "c5c947786fb85189e5130c93882bc1eax9FUnTiIu8wO1EGW2tkg2+R2FQP0uGOaA/xAU19bS8Y23o7tFN+dY8qJNEw1adGo"
+}
+ */ 
 
 
   Route.group(() => { 
-    Route.get("/users/profile", "AuthController.show")
+    Route.post("/users/profile", "AuthController.show")
     Route.post("/logout", "AuthController.logout")
-    Route.patch("/users/profile", "UserController.updateProfile")
+    Route.post("/users/editProfile", "AuthController.updateProfile")
+
+    Route.post("/users/saveAddress", "AuthController.saveAddress")
+    Route.post("/users/deleteAddress", "AuthController.deleteAddress")
+
     Route.patch("/users/email", "UserController.updateEmail")
-    Route.patch("/users/password", "UserController.updatePassword")
-  }).prefix("api").middleware(['auth:jwt'])
+    Route.post("/users/password", "AuthController.updatePassword")
 
+    Route.post("/orders/orders", "OrderController.histOrders")
+    Route.post("/orders/orderById", "OrderController.orderById")
+    Route.post("/orders/proceedToCheckout", "OrderController.proceedToCheckout")
+ 
+  }).prefix("api").middleware(['auth'])
 
-
-  profile
+ 
 
 /**
  * Front End API Website 
 */
   Route.group(() => {
+
+    Route.post("/newsletter", "AuthController.newsletter");
 
     Route.post("/categorys", "CategoryController.index");
     Route.get("/getConfig", "CategoryController.getConfig");
@@ -53,6 +71,7 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
     Route.post("/getCategoryBySlug", "CategoryController.getCategoryBySlug");
 
     Route.post("/getSettings", "SettingController.getSettings");
+    Route.post("/settings/allAdress", "SettingController.allAdress");
 
     Route.post("/getProductsList", "ProductController.index"); 
     Route.post("/getPopularProducts", "ProductController.getPopularProducts");

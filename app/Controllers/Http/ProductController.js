@@ -44,6 +44,7 @@ class ProductController {
           }).with('categories')
             .with('attributes.specifications')
             .with('tags')
+            .with('tva') 
             .with('brand')  
             .orderBy('slug', sort).fetch()
             // .paginate(page, limit) 
@@ -55,6 +56,7 @@ class ProductController {
                                     .with('attributes.specifications')
                                     .with('brand')
                                     .with('tags')
+                                    .with('tva')
                                     .orderBy('slug', sort).fetch() 
                                     // .paginate(page, limit)
       let filters = await this.filters(Products.toJSON(), request.input('options').sort, price, brand, color, discount, category,page,limit)   
@@ -68,11 +70,11 @@ class ProductController {
     let { limit } = request.input('options') || {}
     let Products = await Product.query()
                                 .with('categories.parent')
-                                .with('categories.children')
-                                 
+                                .with('categories.children') 
                                 .with('attributes.specifications')
                                 .with('brand')
                                 .with('tags')
+                                .with('tva')
                                 .where('featured', true).limit(limit).fetch()
     return response.json(Products)
   }
@@ -82,6 +84,7 @@ class ProductController {
                                 .with('categories.parent')
                                 .with('categories.children')
                                 .with('tags')
+                                .with('tva')
                                 
                                 .with('attributes.specifications')
                                 .with('brand').first()
@@ -99,6 +102,7 @@ class ProductController {
                                 .with('categories.parent')
                                 .with('categories.children')
                                 .with('tags')
+                                .with('tva')
                                 
                                 .with('attributes.specifications')
                                 .with('brand').limit(limit).fetch()
@@ -119,6 +123,7 @@ class ProductController {
                                 .with('attributes.specifications')
                                 .with('brand')
                                 .with('tags')
+                                .with('tva')
                                 .where('featured', true).limit(limit).fetch()
     return response.json(Products)
   }
@@ -136,6 +141,7 @@ class ProductController {
                                 .with('attributes.specifications')
                                 .with('brand')
                                 .with('tags')
+                                .with('tva')
                                 .where('featured', true).limit(limit).fetch()
     return response.json(Products)
   }
@@ -153,6 +159,7 @@ class ProductController {
                                 .with('attributes.specifications')
                                 .with('brand')
                                 .with('tags')
+                                .with('tva')
                                 .where('featured', true).limit(limit).fetch()
     return response.json(Products)
   }
@@ -170,6 +177,7 @@ class ProductController {
                                 .with('attributes.specifications')
                                 .with('brand')
                                 .with('tags')
+                                .with('tva')
                                 .where('featured', true).orderBy('id', 'desc').limit(limit).fetch()
     return response.json(Products)
   }
@@ -338,7 +346,8 @@ class ProductController {
       
       .with('attributes.specifications')
       .with('brand').limit(limit)
-      .with('tags').limit(limit)
+      .with('tags')
+      .with('tva').limit(limit)
     return response.json(await Products.fetch())
   }
   async store ({ request, response }) {

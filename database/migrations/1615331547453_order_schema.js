@@ -9,7 +9,7 @@ class OrderSchema extends Schema {
       table.increments()
       table.boolean('isFactor').defaultTo(false) // 1 => command ; 2 => facteur 
       table.integer('status').nullable()
-      table.string('code').unique().notNullable()
+      table.string('code').nullable()
       table.boolean('paymentMode').defaultTo(false)
       table.boolean('with_delivery').nullable()
       table.double('totla_ht').nullable()

@@ -20,6 +20,7 @@ const providers = [
   '@adonisjs/validator/providers/ValidatorProvider',
   '@adonisjs/drive/providers/DriveProvider',
   '@adonisjs/framework/providers/ViewProvider',
+  '@adonisjs/antl/providers/AntlProvider',
   'adonis-lucid-optional-queries/providers/OptionalQueriesProvider'
 ]
 
@@ -59,5 +60,6 @@ const aliases = {}
 |
 */
 const commands = []
+
 
 module.exports = { providers, aceProviders, aliases, commands }

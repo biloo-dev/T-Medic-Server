@@ -1,7 +1,12 @@
 [
    {
-     "title": "ddddddd choice of<br>Plumbing products",
-     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Etiam pharetra laoreet dui quis molestie.",
+     "title_ar": "سماعة طبية إحترافية الصنع منتج أصلي",
+     "title_fr": "ddddddd choice of<br>Plumbing products",
+     "title_en": "ddddddd choice of<br>Plumbing products",
+
+     "text_ar": "لقد تم صنعها في شركة Star|Care خصيصا للأطبياء المحترفين .",
+     "text_fr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Etiam pharetra laoreet dui quis molestie.",
+     "text_en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Etiam pharetra laoreet dui quis molestie.",
      "imageClassic": {
        "ltr": "/images/slides/slide-1-ltr.jpg",
        "rtl": "/images/slides/slide-1-rtl.jpg"
@@ -16,8 +21,13 @@
      }
    }, 
    {
-     "title": "Screwdrivers<br>Professional Tools",
-     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Etiam pharetra laoreet dui quis molestie.",
+     "title_ar": "مضخ آلي بجهد 188 واط و500/دقيقة",
+     "title_fr": "Pompe automatique avec une tension de 188 watts et 500 / min",
+     "title_en": "Automatic pump with a voltage of 188 watts and 500 / min",
+     
+     "text_ar": "منتج أصلي صمم من طرف شركة Star|Car من غجل أطباء محترفين",
+     "text_fr": "Produit original conçu par Star | Voiture pour médecins professionnels",
+     "text_en": "Original product designed by Star | Car for professional doctors",
      "imageClassic": {
        "ltr": "/images/slides/slide-2-ltr.jpg",
        "rtl": "/images/slides/slide-2-rtl.jpg"
@@ -32,8 +42,13 @@
      }
    }, 
    {
-     "title": "One more<br>Unique header",
-     "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.<br>Etiam pharetra laoreet dui quis molestie.",
+      "title_ar": "سرسر طبي لأطباء الأسنان ",
+     "title_fr": "Lit dentaire pour dentistes",
+     "title_en": "Dental bed for dentists",
+     
+     "text_ar": "سرير طبي صنع أصلي من شركة Star|car. ملحق معه سكانار وجهاذ ضوئي كاشف ",
+     "text_fr": "Un lit médical original fabriqué par la société Star | car. Un scanner et un scanner optique y sont attachés.",
+     "text_en": "An original medical bed made by the Star | car company. Attached to it is a scanner and an optical scanner.",
      "imageClassic": {
        "ltr": "/images/slides/slide-3-ltr.jpg",
        "rtl": "/images/slides/slide-3-rtl.jpg"

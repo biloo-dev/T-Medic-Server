@@ -10,6 +10,7 @@ class SubOrderSchema extends Schema {
       table.integer('qty').nullable() 
       table.double('totla_ht').nullable()
       table.double('totla_ttc').nullable()  
+      table.double('total_tva').nullable()  
       table.integer('order_id').unsigned().references('id').inTable('orders').onDelete('set null')
       table.integer('product_id').nullable().unsigned().references('id').inTable('products').onDelete('set null')
       table.timestamps()

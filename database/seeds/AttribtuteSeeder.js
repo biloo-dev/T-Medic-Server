@@ -1,16 +1,5 @@
 'use strict'
-
-/*
-|--------------------------------------------------------------------------
-| AttribtuteSeeder
-|--------------------------------------------------------------------------
-|
-| Make use of the Factory instance to seed database with dummy data or
-| make use of Lucid models directly.
-|
-*/
-
-/** @type {import('@adonisjs/lucid/src/Factory')} */
+ 
 const Factory = use('Factory')
 const Hash = use('Hash')
 const Database = use('Database') 
@@ -32,11 +21,12 @@ class AttribtuteSeeder {
         phone2: "0659815545",
         img: "/images/avatars/bilal_bour.jpg",
         email: "billal.20113@gmail.com",
-        password: await Hash.make("biloo123"),
+        password: await Hash.make("admin123"),
       }, 
     ])
     await Database.from('addresses').insert([
       { 
+        id: 1,
         default: 1,
         address_fr : "119 rue Residence, L88",
         address_en : "119 Residence Street, L88",
@@ -48,7 +38,8 @@ class AttribtuteSeeder {
         user_id : 1
       }, 
       { 
-        default: 2,
+        id: 2,
+        default: 1,
         address_fr : "119 rue Residence, L88",
         address_en : "119 Residence Street, L88",
         address_ar : "شارع  119 مسكن ، الرقم88",
@@ -59,7 +50,8 @@ class AttribtuteSeeder {
         user_id : 2
       }, 
       { 
-        default: 3,
+        id: 3,
+        default: 1,
         address_fr : "Rue du 1er novembre, magasin numéro L5",
         address_en : "1st November Street, store number L5",
         address_ar : "شارع أول نوفمبر رقم المحل خ5 ",
