@@ -33,8 +33,7 @@ class AuthController {
   }
   
   async login({ auth, request, response }) { 
-    let { email, password} = request.all();
-
+    let { email, password} = request.all(); 
         try {
           const rules = {
             email: "required",
@@ -266,7 +265,7 @@ class AuthController {
   }
   async newsletter({ request,response }){
     try {
-      const newsletter = await newsletter.where("email",request.input("email")).fetch()
+      let newsletter = await Newsletter.where("email",request.input("email")).fetch()
       if (!newsletter) {
          return response.status(400).send({ 
               field : "email",
@@ -274,7 +273,7 @@ class AuthController {
               validation  : "unique",  
           });
       } 
-      const newsletter = await newsletter.create(request.all())
+      newsletter = await newsletter.create(request.all())
       return response.json(true) 
     } catch (err) {
        response
