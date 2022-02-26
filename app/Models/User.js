@@ -7,24 +7,30 @@ const Model = use('Model')
 const Hash = use('Hash')
 
 class User extends Model {
-  static boot () {
-    super.boot()
- 
-    this.addHook('beforeSave', async (userInstance) => {
+  static boot() {
+    super.boot();
+
+    this.addHook("beforeSave", async (userInstance) => {
       if (userInstance.dirty.password) {
-        userInstance.password = await Hash.make(userInstance.password)
+        userInstance.password = await Hash.make(userInstance.password);
       }
-    })
+    });
   }
- 
-  addresse () {
-    return this.hasMany('App/Models/Address','id','user_id')
+  static get traits() {
+    return [
+      "@provider:Adonis/Acl/HasRole",
+      "@provider:Adonis/Acl/HasPermission",
+    ];
   }
-  orders () {
-    return this.hasMany('App/Models/Order','id','user_id')
+
+  addresse() {
+    return this.hasMany("App/Models/Address", "id", "user_id");
   }
-  tokens () {
-    return this.hasMany('App/Models/Token')
+  orders() {
+    return this.hasMany("App/Models/Order", "id", "user_id");
+  }
+  tokens() {
+    return this.hasMany("App/Models/Token");
   }
 }
 

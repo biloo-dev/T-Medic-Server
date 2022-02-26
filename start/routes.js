@@ -14,10 +14,7 @@
 */
 
 const Route = use('Route')
-Route.post('users', 'UserController.store')
-Route.put('users', 'UserController.update')
-Route.post('users/forgotPassword', 'ForgotPasswordController.store')
-Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update')
+
 
 /**
  * BeckEnd API Admin Dashboard
@@ -28,22 +25,12 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
     Route.post("login", "AuthController.login");  
     Route.post("/refreshToken", "AuthController.refreshToken")
   }).prefix("api");
-
-/**
  
-{
-    "type": "bearer",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOjMsImlhdCI6MTYxNjM1OTQ3OSwiZXhwIjoxNjE2NDQ1ODc5fQ.PfziZO7c77MLiPcP4psoK1ukzfOIEwozP5ijl6IjQkY",
-    "refreshToken": "c5c947786fb85189e5130c93882bc1eax9FUnTiIu8wO1EGW2tkg2+R2FQP0uGOaA/xAU19bS8Y23o7tFN+dY8qJNEw1adGo"
-}
- */ 
-
-
   Route.group(() => { 
     Route.post("/users/profile", "AuthController.show")
     Route.post("/logout", "AuthController.logout")
     Route.post("/users/editProfile", "AuthController.updateProfile")
-
+     
     Route.post("/users/saveAddress", "AuthController.saveAddress")
     Route.post("/users/deleteAddress", "AuthController.deleteAddress")
 
@@ -54,14 +41,21 @@ Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update
     Route.post("/orders/orderById", "OrderController.orderById")
     Route.post("/orders/proceedToCheckout", "OrderController.proceedToCheckout")
  
+    Route.post('users',        'UserController.index')
+    Route.post('users/store',  'UserController.store')
+    Route.post('users/update', 'UserController.update')
+    Route.post("users/delete", "UserController.destroy");
+    
+    Route.post('users/forgotPassword', 'ForgotPasswordController.store')
+    Route.put('users/forgotPassword/:token/:email', 'ForgotPasswordController.update')
+    
   }).prefix("api").middleware(['auth'])
-
- 
-
-/**
- * Front End API Website 
-*/
+  
+  /**
+   * Front End API Website 
+   */
   Route.group(() => {
+    Route.post("users/verifyEmail", "UserController.verifyEmail");
 
     Route.post("/newsletter", "AuthController.newsletter");
 
