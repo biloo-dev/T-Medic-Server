@@ -18,3 +18,4 @@ class NewsLatterSchema extends Schema {
 }
 
 module.exports = NewsLatterSchema
+

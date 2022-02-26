@@ -265,18 +265,22 @@ class AuthController {
     }
   }
   async newsletter({ request,response }){
+    
     try {
-      const newsletter = await newsletter.where("email",request.input("email")).fetch()
-      if (!newsletter) {
+      const newsletter = await Newsletter.query().where("email",request.input("email")).getCount()
+       if (!!newsletter) {
          return response.status(400).send({ 
               field : "email",
               message : 'IncorrectPassword',
               validation  : "unique",  
           });
       } 
-      const newsletter = await newsletter.create(request.all())
+      newsletter = await Newsletter.create({
+        email : request.input("email")
+      })
       return response.json(true) 
     } catch (err) {
+      console.log(err)
        response
         .status(404)
         .json({ type: 'error', message: err })
